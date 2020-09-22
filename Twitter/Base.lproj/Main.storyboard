@@ -56,50 +56,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="190" id="kGi-L4-Ol8" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="190"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tweetCell" rowHeight="134" id="Dxy-HD-vDP" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kGi-L4-Ol8" id="IjT-RD-249" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dxy-HD-vDP" id="efS-Wt-TRk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bug-iF-v8l">
-                                            <rect key="frame" x="28" y="19" width="65" height="65"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ekX-i9-6VY">
+                                            <rect key="frame" x="8" y="8" width="65" height="65"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="65" id="XCP-dT-0Ms"/>
-                                                <constraint firstAttribute="width" constant="65" id="b7d-dt-nhu"/>
+                                                <constraint firstAttribute="width" constant="65" id="eqy-qd-U0V"/>
+                                                <constraint firstAttribute="height" constant="65" id="kFW-4r-2WT"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrZ-kt-Yef">
-                                            <rect key="frame" x="101" y="19" width="285" height="21.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQB-GB-oS1">
+                                            <rect key="frame" x="81" y="19" width="305" height="21.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tweet content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLR-Vb-4Wa">
-                                            <rect key="frame" x="101" y="48.5" width="285" height="14.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JR6-13-Byx">
+                                            <rect key="frame" x="81" y="48.5" width="325" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="tLR-Vb-4Wa" secondAttribute="trailing" constant="8" id="B8M-1M-p2c"/>
-                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Bug-iF-v8l" secondAttribute="bottom" constant="8" id="GEs-dl-dEk"/>
-                                        <constraint firstItem="LrZ-kt-Yef" firstAttribute="top" secondItem="IjT-RD-249" secondAttribute="topMargin" constant="8" id="Jyh-85-18Y"/>
-                                        <constraint firstItem="LrZ-kt-Yef" firstAttribute="leading" secondItem="Bug-iF-v8l" secondAttribute="trailing" constant="8" id="Qea-2a-GMA"/>
-                                        <constraint firstItem="Bug-iF-v8l" firstAttribute="top" secondItem="IjT-RD-249" secondAttribute="topMargin" constant="8" id="SsE-Eb-JOC"/>
-                                        <constraint firstItem="tLR-Vb-4Wa" firstAttribute="top" secondItem="LrZ-kt-Yef" secondAttribute="bottom" constant="8" id="XDp-mn-vy7"/>
-                                        <constraint firstItem="tLR-Vb-4Wa" firstAttribute="leading" secondItem="Bug-iF-v8l" secondAttribute="trailing" constant="8" id="eVC-8P-7uP"/>
-                                        <constraint firstItem="Bug-iF-v8l" firstAttribute="leading" secondItem="IjT-RD-249" secondAttribute="leadingMargin" constant="8" id="pnl-CH-9ib"/>
-                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="tLR-Vb-4Wa" secondAttribute="bottom" constant="8" id="u3L-v8-O43"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="LrZ-kt-Yef" secondAttribute="trailing" constant="8" id="vXi-6J-9eU"/>
+                                        <constraint firstItem="nQB-GB-oS1" firstAttribute="leading" secondItem="ekX-i9-6VY" secondAttribute="trailing" constant="8" id="548-6K-eRj"/>
+                                        <constraint firstItem="JR6-13-Byx" firstAttribute="leading" secondItem="ekX-i9-6VY" secondAttribute="trailing" constant="8" id="8xd-8a-JCF"/>
+                                        <constraint firstItem="nQB-GB-oS1" firstAttribute="top" secondItem="efS-Wt-TRk" secondAttribute="topMargin" constant="8" id="CiE-j4-3mk"/>
+                                        <constraint firstAttribute="trailing" secondItem="JR6-13-Byx" secondAttribute="trailing" constant="8" id="Q2H-WX-0Ot"/>
+                                        <constraint firstItem="JR6-13-Byx" firstAttribute="top" secondItem="nQB-GB-oS1" secondAttribute="bottom" constant="8" id="Qxm-bg-1Sp"/>
+                                        <constraint firstItem="ekX-i9-6VY" firstAttribute="top" secondItem="efS-Wt-TRk" secondAttribute="top" constant="8" id="W1X-4a-avd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nQB-GB-oS1" secondAttribute="trailing" constant="8" id="hvC-Sg-xGL"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ekX-i9-6VY" secondAttribute="bottom" constant="8" id="kdZ-Ep-JPO"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JR6-13-Byx" secondAttribute="bottom" constant="8" id="qoF-nI-rxz"/>
+                                        <constraint firstItem="ekX-i9-6VY" firstAttribute="leading" secondItem="efS-Wt-TRk" secondAttribute="leading" constant="8" id="slM-A9-4SZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="profileImageView" destination="Bug-iF-v8l" id="hsA-Md-Q4A"/>
-                                    <outlet property="tweetContent" destination="tLR-Vb-4Wa" id="OlD-eU-MP9"/>
-                                    <outlet property="userNameLabel" destination="LrZ-kt-Yef" id="Scc-KI-ewK"/>
+                                    <outlet property="profileImageView" destination="ekX-i9-6VY" id="r8k-18-EeU"/>
+                                    <outlet property="tweetContent" destination="JR6-13-Byx" id="CXv-hN-zA7"/>
+                                    <outlet property="userNameLabel" destination="nQB-GB-oS1" id="B1Y-37-cwH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
