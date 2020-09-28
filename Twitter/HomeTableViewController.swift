@@ -34,7 +34,7 @@ class HomeTableViewController: UITableViewController {
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count": numberOfTweet]
         
-        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: { (tweets:[NSDictionary]) in
+        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams as [String : Any], success: { (tweets:[NSDictionary]) in
             self.tweetArray.removeAll()
 
             
@@ -50,6 +50,10 @@ class HomeTableViewController: UITableViewController {
         })
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadMoreTweets()
+    }
     func loadMoreTweets(){
         
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
@@ -65,7 +69,7 @@ class HomeTableViewController: UITableViewController {
             }
             self.tableView.reloadData()
         }, failure:{(Error) in
-            print("Could not retrieve tweets.")
+            print("Error: \(Error.localizedDescription)")
         })
 
     }
@@ -75,12 +79,6 @@ class HomeTableViewController: UITableViewController {
             loadMoreTweets()
         }
     }
-    
-    
-    
-    
-    
-    
     
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout()
@@ -95,14 +93,21 @@ class HomeTableViewController: UITableViewController {
         
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
         
-        cell.userNameLabel.text = user["name"] as! String
-        cell.tweetContent.text = tweetArray[indexPath.row]["text"] as! String
+        cell.userNameLabel.text = (user["name"] as! String)
+        cell.tweetContent.text = (tweetArray[indexPath.row]["text"] as! String)
         
         let imageUrl = URL(string: (user["profile_image_url_https"] as! String))
         let data = try? Data(contentsOf: imageUrl!)
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
         }
+        
+        //figure out if the current tweet is favorited or not
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
+        
         
         return cell
     }
